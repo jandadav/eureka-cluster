@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: discovery
+server:
+  port: 8761
+eureka:
+  enableSelfPreservation: false
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+  dashboard:
+    enabled: true
+
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /actuator
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'
