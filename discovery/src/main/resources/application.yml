@@ -4,7 +4,6 @@ spring:
 server:
   port: 8761
 eureka:
-  enableSelfPreservation: false
   client:
     registerWithEureka: true
     fetchRegistry: true
