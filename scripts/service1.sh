@@ -1,4 +1,5 @@
 java -Dspring.application.name=service1 \
+    -Dserver.port=6001 \
     -Deureka.instance.leaseRenewalIntervalInSeconds=5 \
     -Deureka.instance.leaseExpirationDurationInSeconds=10 \
     -Deureka.client.serviceUrl.defaultZone=http://eureka-peer2:5002/eureka \
