@@ -1,0 +1,56 @@
+plugins {
+    id "com.moowork.node" version "1.2.0"
+}
+
+group 'com.david'
+version '0.0.1-SNAPSHOT'
+
+node {
+    // Version of node to use.
+    version = '0.11.10'
+
+    // Version of npm to use.
+    npmVersion = '2.1.5'
+
+    // Version of Yarn to use.
+    yarnVersion = '0.16.1'
+
+    // Base URL for fetching node distributions (change if you have a mirror).
+    distBaseUrl = 'https://nodejs.org/dist'
+
+    // If true, it will download node using above parameters.
+    // If false, it will try to use globally installed node.
+    download = false
+
+    // Set the work directory for unpacking node
+    workDir = file("${project.buildDir}/tools/nodejs")
+
+    // Set the work directory for NPM
+    npmWorkDir = file("${project.buildDir}/tools/npm")
+
+    // Set the work directory for Yarn
+    yarnWorkDir = file("${project.buildDir}/tools/yarn")
+
+    // Set the work directory where node_modules should be located
+    nodeModulesDir = file("${project.projectDir}/frontend")
+}
+
+task bundle(type: NpmTask) {
+    inputs.dir('frontend/src')
+    inputs.dir('frontend/public')
+    inputs.files('frontend/.env*')
+    //inputs.file('frontend/eslintrc.json')
+    inputs.file('frontend/package.json')
+
+    outputs.dir('frontend/build')
+
+    dependsOn npmInstall
+    args = ['run', 'build']
+}
+
+task cleanBundle(type: Delete) {
+    delete 'bin', 'build', 'frontend/build', 'frontend/node_modules', 'tools/nodejs'
+}
+
+//clean.dependsOn cleanBundle
+//build.dependsOn bundle

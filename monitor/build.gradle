@@ -17,6 +17,24 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	implementation 'org.projectlombok:lombok:1.18.10'
+	compileOnly 'org.projectlombok:lombok:1.18.10'
 	annotationProcessor 'org.projectlombok:lombok:1.18.10'
 }
+
+def uiModule = "${project(':ui').projectDir}"
+processResources {
+	dependsOn "copyUi"
+}
+task copyUi(type: Copy) {
+	group = "ui"
+
+	dependsOn ":ui:bundle"
+
+	inputs.dir(uiModule + '/frontend/build')
+	outputs.dir('src/main/resources/static')
+
+	from uiModule + '/frontend/build'
+	into 'src/main/resources/static'
+}
+
+clean.dependsOn(":ui:cleanBundle")

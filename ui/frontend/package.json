@@ -1,0 +1,38 @@
+{
+    "name": "frontend",
+    "version": "0.0.1",
+    "description": "Frontend for Eureka cluster evaluator",
+    "main": "index.js",
+    "private": true,
+    "homepage": ".",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build"
+    },
+    "author": "David Janda",
+    "license": "EPL-2.0",
+    "dependencies": {
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "react-scripts": "^3.1.1",
+        "mineral-ui": "^0.58.0",
+        "emotion-theming": "^10.0.17",
+        "@emotion/core": "^10.0.17",
+        "@emotion/is-prop-valid": "^0.8.2",
+        "@emotion/styled": "^10.0.17",
+        "mineral-ui-icons": "^0.5.0",
+        "react-reveal": "1.2.2"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

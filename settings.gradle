@@ -3,4 +3,5 @@ rootProject.name = 'eureka-cluster'
 include 'discovery'
 include 'service'
 include 'monitor'
+include 'ui'
 

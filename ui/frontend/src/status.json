@@ -1,0 +1,154 @@
+{
+    "apimlStatus": "CONNECTED",
+    "discoveryServices": [
+        {
+            "instanceId": "localhost:discovery:10011",
+            "app": "DISCOVERY",
+            "appGroupName": null,
+            "ipAddr": "127.0.0.1",
+            "sid": "na",
+            "homePageUrl": "https://localhost:10011/",
+            "statusPageUrl": "https://localhost:10011/application/info",
+            "healthCheckUrl": "https://localhost:10011/application/health",
+            "secureHealthCheckUrl": "https://localhost:10011/application/health",
+            "vipAddress": "discovery",
+            "secureVipAddress": "discovery",
+            "countryId": 1,
+            "dataCenterInfo": {
+                "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                "name": "MyOwn"
+            },
+            "hostName": "localhost",
+            "status": "DOWN",
+            "leaseInfo": {
+                "renewalIntervalInSecs": 30,
+                "durationInSecs": 90,
+                "registrationTimestamp": 1568015938959,
+                "lastRenewalTimestamp": 1568017499609,
+                "evictionTimestamp": 0,
+                "serviceUpTimestamp": 1568015909989
+            },
+            "isCoordinatingDiscoveryServer": true,
+            "metadata": {
+                "management.port": "10011"
+            },
+            "lastUpdatedTimestamp": 1568015938960,
+            "lastDirtyTimestamp": 1568015908933,
+            "actionType": "ADDED",
+            "asgName": null,
+            "overriddenStatus": "UNKNOWN"
+        }
+    ],
+    "coreServices": [
+        {
+            "instanceId": "localhost:gateway:10010",
+            "app": "GATEWAY",
+            "appGroupName": null,
+            "ipAddr": "127.0.0.1",
+            "sid": "na",
+            "homePageUrl": "https://localhost:10010/",
+            "statusPageUrl": "https://localhost:10010/application/info",
+            "healthCheckUrl": "https://localhost:10010/application/health",
+            "secureHealthCheckUrl": "https://localhost:10010/application/health",
+            "vipAddress": "gateway",
+            "secureVipAddress": "gateway",
+            "countryId": 1,
+            "dataCenterInfo": {
+                "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                "name": "MyOwn"
+            },
+            "hostName": "localhost",
+            "status": "UP",
+            "leaseInfo": {
+                "renewalIntervalInSecs": 30,
+                "durationInSecs": 90,
+                "registrationTimestamp": 1568015912598,
+                "lastRenewalTimestamp": 1568017473510,
+                "evictionTimestamp": 0,
+                "serviceUpTimestamp": 1568015912598
+            },
+            "isCoordinatingDiscoveryServer": false,
+            "metadata": {
+                "mfaas.discovery.catalogUiTile.title": "API Mediation Layer API",
+                "apiml.apiInfo.0.swaggerUrl": "https://localhost:10010/api-doc",
+                "mfaas.discovery.catalogUiTile.description": "The API Mediation Layer for z/OS internal API services. The API Mediation Layer provides a single point of access to mainframe REST APIs and offers enterprise cloud-like features such as high-availability, scalability, dynamic API discovery, and documentation.",
+                "mfaas.discovery.service.title": "API Gateway",
+                "management.port": "10010",
+                "mfaas.discovery.catalogUiTile.id": "apimediationlayer",
+                "mfaas.discovery.enableApiDoc": "true",
+                "apiml.apiInfo.0.documentationUrl": "https://zowe.github.io/docs-site/",
+                "mfaas.api-info.apiVersionProperties.v1.title": "API Gateway",
+                "routed-services.api-v1.service-url": "/api/v1/gateway",
+                "apiml.apiInfo.0.apiId": "com.ca.mfaas.gateway",
+                "mfaas.discovery.service.description": "API Gateway service to route requests to services registered in the API Mediation Layer and provides an API for mainframe security.",
+                "apiml.apiInfo.0.gatewayUrl": "api/v1",
+                "mfaas.api-info.swagger.location": "gateway-api-doc.json",
+                "routed-services.api-v1.gateway-url": "/api/v1",
+                "mfaas.api-info.apiVersionProperties.v1.version": "1.0.0",
+                "mfaas.discovery.catalogUiTile.version": "1.0.0",
+                "mfaas.api-info.apiVersionProperties.v1.description": "REST API for the API Gateway service which is a component of the API Mediation Layer. Use this API to access the Enterprise z/OS Security Manager to perform tasks such as logging in with mainframe credentials and checking authorization to mainframe resources."
+            },
+            "lastUpdatedTimestamp": 1568015912598,
+            "lastDirtyTimestamp": 1568015912543,
+            "actionType": "ADDED",
+            "asgName": null,
+            "overriddenStatus": "UNKNOWN"
+        },
+        {
+            "instanceId": "localhost:apicatalog:10014",
+            "app": "APICATALOG",
+            "appGroupName": null,
+            "ipAddr": "172.19.220.17",
+            "sid": "na",
+            "homePageUrl": "https://localhost:10014/apicatalog",
+            "statusPageUrl": "https://localhost:10014/apicatalog/application/info",
+            "healthCheckUrl": "https://localhost:10014/apicatalog/application/health",
+            "secureHealthCheckUrl": "https://localhost:10014/actuator/health",
+            "vipAddress": "apicatalog",
+            "secureVipAddress": "apicatalog",
+            "countryId": 1,
+            "dataCenterInfo": {
+                "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                "name": "MyOwn"
+            },
+            "hostName": "localhost",
+            "status": "UP",
+            "leaseInfo": {
+                "renewalIntervalInSecs": 5,
+                "durationInSecs": 6,
+                "registrationTimestamp": 1568015947494,
+                "lastRenewalTimestamp": 1568017412636,
+                "evictionTimestamp": 0,
+                "serviceUpTimestamp": 1568015917442
+            },
+            "isCoordinatingDiscoveryServer": false,
+            "metadata": {
+                "routed-services.ui_v1.service-url": "/apicatalog",
+                "routed-services.api_v1.service-url": "/apicatalog",
+                "routed-services.api_v1.gateway-url": "api/v1",
+                "mfaas.discovery.catalogUiTile.title": "API Mediation Layer API",
+                "apiml.apiInfo.0.swaggerUrl": "https://localhost:10014/apicatalog/api-doc",
+                "mfaas.discovery.catalogUiTile.description": "The API Mediation Layer for z/OS internal API services. The API Mediation Layer provides a single point of access to mainframe REST APIs and offers enterprise cloud-like features such as high-availability, scalability, dynamic API discovery, and documentation.",
+                "routed-services.ui_v1.gateway-url": "ui/v1",
+                "mfaas.api-info.apiVersionProperties.v1.basePackage": "com.ca.mfaas.apicatalog.controllers.api",
+                "mfaas.discovery.service.title": "API Catalog",
+                "management.port": "10014",
+                "mfaas.discovery.catalogUiTile.id": "apimediationlayer",
+                "mfaas.discovery.enableApiDoc": "true",
+                "mfaas.api-info.apiVersionProperties.v1.title": "API Catalog",
+                "apiml.apiInfo.0.apiId": "org.zowe.apicatalog",
+                "mfaas.discovery.service.description": "API Catalog service to display service details and API documentation for discovered API services.",
+                "apiml.apiInfo.0.gatewayUrl": "api/v1",
+                "mfaas.api-info.apiVersionProperties.v1.version": "1.0.0",
+                "mfaas.discovery.catalogUiTile.version": "1.0.0",
+                "mfaas.api-info.apiVersionProperties.v1.description": "REST API for the API Catalog service which is a component of the API Mediation Layer. Use this API to retrieve information regarding catalog dashboard tiles, tile contents and its status, API documentation and status for the registered services."
+            },
+            "lastUpdatedTimestamp": 1568015947494,
+            "lastDirtyTimestamp": 1568015947467,
+            "actionType": "ADDED",
+            "asgName": null,
+            "overriddenStatus": "UNKNOWN"
+        }
+    ],
+    "otherServices": []
+}
