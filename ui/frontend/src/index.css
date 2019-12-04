@@ -4,14 +4,14 @@ body{
 
 .Application {
     
-    padding: 0px;
+    /* padding: 0px;
     margin: 0px;
-    display: flex;
+    display: flex; */
     /* flex-direction: column; */
-    justify-content: center;
+    /* justify-content: center;
     resize: none;
     overflow: auto;
-    height: 90vh;
+    height: 90vh; */
     
     
 }
@@ -23,15 +23,15 @@ body{
 }
 .MainWrapper {
     
-    resize: none;
+    /* resize: none;
     overflow: auto;
-    margin: auto;
+    margin: auto; */
 }
 .Service {
-    text-align: left;
+    /* text-align: left;
     width: 20em;
-    padding: .5em;
+    padding: .5em; */
 }
 .Collumn {
-    float: left;
+    /* float: left; */
 }

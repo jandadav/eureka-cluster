@@ -37,17 +37,17 @@ class Service extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.status !== prevProps.status) {
+    if (this.props.serviceTitle !== prevProps.serviceTitle) {
       //this.computeStatus();
     }
-    console.log(this.props);
+    
   }
 
   render() {
-
+    console.log(this.props);
     return (
 
-      <div class="Service">
+      // <div class="Service">
         <Fade>
           <Card>
             {/* <CardTitle>{this.props.serviceTitle}</CardTitle>
@@ -56,7 +56,7 @@ class Service extends Component {
             <CardTitle>{this.props.serviceTitle}</CardTitle>
           </Card>
         </Fade>
-      </div>
+      // </div>
     )
   }
 }

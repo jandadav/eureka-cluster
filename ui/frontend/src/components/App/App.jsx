@@ -1,9 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Service from '../Service/Service';
 //import data from '../../status.json';
-import Card, {CardBlock, CardTitle} from 'mineral-ui/Card';
+import Card, { CardBlock, CardTitle } from 'mineral-ui/Card';
 import IconHelp from 'mineral-ui-icons/IconHelp';
 import IconDoneAll from 'mineral-ui-icons/IconDoneAll';
+import Text from 'mineral-ui/Text';
+import Grid, { GridItem } from 'mineral-ui/Grid';
 
 
 class App extends Component {
@@ -29,10 +31,10 @@ class App extends Component {
             () => (
                 fetch(process.env.REACT_APP_BACKEND_URL)
 
-                .then(response => response.json())
-                .then(res =>
-                    this.setState(() => ({ data: res }))
-                ),
+                    .then(response => response.json())
+                    .then(res =>
+                        this.setState(() => ({ data: res }))
+                    ),
                 console.log(this.state.data)
                 /*.catch(
                     error => {
@@ -53,21 +55,18 @@ class App extends Component {
         return response;
     }
 
-    renderList(list) {
+    renderList(list, title) {
+        console.log("list:");
         console.log(list);
-        if (list == null) {
-            return null;
-        }
 
-        let output_inner
-        for (var i = 0; i < list.length; i++) {
-            output_inner+= <Service serviceTitle={list[i]}/>
-        }
+        let output_inner = []
 
-        let output = <div class="Collumn">{output_inner}</div>;
-        if (list.lenth === 0) {
-            output = null;
+        if (list!= null && list.length != 0) {
+            for (var i = 0; i < list.length; i++) {
+                output_inner.push(<Service serviceTitle={list[i]} />)
+            }
         }
+        let output = <div class="Collumn"><Text as="h4">{title}</Text>{output_inner}</div>;
 
         return (
             <>
@@ -78,17 +77,15 @@ class App extends Component {
 
     renderTitle() {
         var output;
-        if (this.state.data.apimlStatus === "CONNECTED") {
-            output = <div><IconDoneAll size="2em" color="green"></IconDoneAll> Connected to Discovery Service</div>;
-        } else {
-            output = <div><IconHelp size="2em" color="red"></IconHelp> Connecting to Discovery Service . . .</div>;
-        }
+        // if (this.state.data.apimlStatus === "CONNECTED") {
+        //     output = <div><IconDoneAll size="2em" color="green"></IconDoneAll> Connected to Discovery Service</div>;
+        // } else {
+        //     output = <div><IconHelp size="2em" color="red"></IconHelp> Connecting to Discovery Service . . .</div>;
+        // }
 
         output = (<Card class="StatusTitle">
-            <CardTitle>Zowe Status and Diagnostic service</CardTitle>
-            <CardBlock>
-                {output}
-            </CardBlock>
+            <CardTitle>Eureka cluster test system</CardTitle>
+
         </Card>);
 
         return output;
@@ -100,14 +97,23 @@ class App extends Component {
 
                 {this.renderTitle()}
 
-                <div class="Application">
+                {/* <div class="Application"> */}
 
-                    <div class="MainWrapper">
-                        {this.renderList(this.state.data.eureka1Apps)}
-                        {this.renderList(this.state.data.eureka2Apps)}
-                        {this.renderList(this.state.data.eureka3Apps)}
-                    </div>
-                </div>
+                {/* <div class="MainWrapper"> */}
+                <Grid>
+                    <GridItem>{this.renderList(this.state.data.eureka1Apps, "Discovery1")}</GridItem>
+                    <GridItem>{this.renderList(this.state.data.eureka2Apps, "Discovery2")}</GridItem>
+                    <GridItem>{this.renderList(this.state.data.eureka3Apps, "Discovery3")}</GridItem>
+
+                    <GridItem>{this.renderList(this.state.data.service1Cache, "Service1 cache")}</GridItem>
+                    <GridItem>{this.renderList(this.state.data.service2Cache, "Service2 cache")}</GridItem>
+                    <GridItem>{this.renderList(this.state.data.service3Cache, "Service3 cache")}</GridItem>
+                    <GridItem>{this.renderList(this.state.data.service4Cache, "Service4 cache")}</GridItem>
+                    <GridItem>{this.renderList(this.state.data.service5Cache, "Service5 cache")}</GridItem>
+
+                </Grid>
+                {/* </div> */}
+                {/* </div> */}
             </div>
         )
 
