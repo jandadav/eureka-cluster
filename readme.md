@@ -6,11 +6,23 @@ for testing Eureka things
 
 this needs entries in hosts (C:\WINDOWS\System32\drivers\etc\hosts on Windows):
 
+_for eureka replication to work, all eureka instaces must be running on different hosts_
+
 ```
 127.0.0.1 eureka-peer1
 127.0.0.1 eureka-peer2
 127.0.0.1 eureka-peer3
 ```
+
+### Running
+
+use scripts provided in `scripts/` folder to start individual services.
+You can use the monitor module to run a UI that shows active services and their caches to monitor the state of the cluster.
+The monitor uses 
+- /eureka/apps endpoint of discovery services for discovered services
+- /actuator/health discoverycomposite part of the response for service cache
+
+
 
 references for configuring:
 

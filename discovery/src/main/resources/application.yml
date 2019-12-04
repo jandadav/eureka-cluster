@@ -4,9 +4,9 @@ spring:
 server:
   port: 8761
 eureka:
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
   dashboard:
     enabled: true
 

@@ -1,0 +1,37 @@
+body{
+    margin: 0px;
+}
+
+.Application {
+    
+    /* padding: 0px;
+    margin: 0px;
+    display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center;
+    resize: none;
+    overflow: auto;
+    height: 90vh; */
+    
+    
+}
+.StatusTitle {
+    height: 10vh;
+    margin: 10px;
+    padding: 10px;
+
+}
+.MainWrapper {
+    
+    /* resize: none;
+    overflow: auto;
+    margin: auto; */
+}
+.Service {
+    /* text-align: left;
+    width: 20em;
+    padding: .5em; */
+}
+.Collumn {
+    /* float: left; */
+}
