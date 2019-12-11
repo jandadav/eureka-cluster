@@ -33,7 +33,18 @@ https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-eureka-ser
 https://medium.com/@fahimfarookme/the-mystery-of-eureka-self-preservation-c7aa0ed1b799
 
 ### interesting Eureka configuration
-- eviction-interval-timer-in-ms: 1000
+- eureka.server.evictionIntervalTimerInMs
+
+- eureka.server.response-cache-update-interval-ms
+
+- eureka.client.registryFetchIntervalSeconds
+
+- initial-instance-info-replication-interval-seconds: 0
+- instance-info-replication-interval-seconds: 1
+- registry-fetch-interval-seconds: 1
+
+Ribbon cache:
+- ribbon.serverListRefreshInterval / ribbon.ServerListRefreshInterval
 
 ```If registerWithEureka is true, an instance registers with a Eureka server using a given URL; then onwards, it sends heartbeats every 30s (configurable by eureka.instance.leaseRenewalIntervalInSeconds). If the server doesn’t receive a heartbeat, it waits 90s (configurable by eureka.instance.leaseExpirationDurationInSeconds) before removing the instance from registry and there by disallowing traffic to that instance. Sending heartbeat is an asynchronous task; if the operation fails, it backs off exponentially by a factor of 2 until a maximum delay of eureka.instance.leaseRenewalIntervalInSeconds * eureka.client.heartbeatExecutorExponentialBackOffBound is reached. There is no limit to the number of retries for registering with Eureka.```
 
